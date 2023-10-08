@@ -10,4 +10,3 @@ require('plugins/devicons') -- plugins devicons
 require('plugins/coc') -- plugin coc.nvim
 require('plugins/emmet') -- plugin emmet
 require('plugins/indentline') -- plugin emmet
-
