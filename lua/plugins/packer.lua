@@ -2,7 +2,7 @@
 return require('packer').startup(function(use)
     -- Configuraciones de Packer
     use 'wbthomason/packer.nvim'
-    use 'folke/tokyonight.nvim'
+    --use 'folke/tokyonight.nvim'
     use 'kylechui/nvim-surround'
     use 'easymotion/vim-easymotion'
     use 'mg979/vim-visual-multi'
@@ -22,4 +22,12 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
 }   
     use 'nvim-tree/nvim-web-devicons'
+    use { "ellisonleao/gruvbox.nvim" }
+    use({
+	"L3MON4D3/LuaSnip",
+	-- follow latest release.
+	tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+	-- install jsregexp (optional!:).
+	run = "make install_jsregexp"
+})
 end)

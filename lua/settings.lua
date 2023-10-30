@@ -16,3 +16,5 @@ opt.autoindent = true
 opt.expandtab = true
 opt.termguicolors = true
 opt.fileencoding = "utf-8"
+opt.clipboard= "unnamedplus"
+vim.cmd('set noshowmode')
