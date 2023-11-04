@@ -2,7 +2,6 @@
 return require('packer').startup(function(use)
     -- Configuraciones de Packer
     use 'wbthomason/packer.nvim'
-    --use 'folke/tokyonight.nvim'
     use 'kylechui/nvim-surround'
     use 'easymotion/vim-easymotion'
     use 'mg979/vim-visual-multi'
@@ -22,12 +21,26 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
 }   
     use 'nvim-tree/nvim-web-devicons'
-    use { "ellisonleao/gruvbox.nvim" }
-    use({
-	"L3MON4D3/LuaSnip",
-	-- follow latest release.
-	tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-	-- install jsregexp (optional!:).
-	run = "make install_jsregexp"
-})
+    use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    use ('nvim-treesitter/playground')
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v3.x',
+        requires = {
+            --- Uncomment these if you want to manage LSP servers from neovim
+             {'williamboman/mason.nvim'},
+             {'williamboman/mason-lspconfig.nvim'},
+
+            -- LSP Support
+            {'neovim/nvim-lspconfig'},
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'},
+            {'hrsh7th/cmp-nvim-lsp'},
+            {'L3MON4D3/LuaSnip'},
+        }
+    }
+    --use({ 'rose-pine/neovim', as = 'rose-pine' })
+    --use 'folke/tokyonight.nvim'
+    use 'Mofiqul/dracula.nvim'
+        
 end)
