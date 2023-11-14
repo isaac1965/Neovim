@@ -17,7 +17,7 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'html', 'cssls', 'pyright', 'tsserver', 'rust_analyzer'},
+  ensure_installed = {'html', 'cssls', 'pyright', 'tsserver', 'rust_analyzer', 'bashls'},
   handlers = {
     lsp_zero.default_setup,
     lua_ls = function()
@@ -43,4 +43,17 @@ cmp.setup({
     ['<C-y>'] = cmp.mapping.confirm({ select = true }),
     ['<C-Space>'] = cmp.mapping.complete(),
   }),
+})
+
+local lsp_zero = require('lsp-zero')
+
+lsp_zero.on_attach(function(client, bufnr)
+  lsp_zero.default_keymaps({buffer = bufnr})
+end)
+
+lsp_zero.set_sign_icons({
+  error = '',
+  warn = '',
+  hint = '',
+  info = ''
 })
