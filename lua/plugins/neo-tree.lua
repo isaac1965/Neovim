@@ -3,7 +3,7 @@ return {
   branch = "v3.x",
   cmd = "Neotree",
   keys = {
-    {"<leader>e", "<CMD>Neotree reveal left toggle dir=%:p:h:h <CR>"},
+    {"<leader>e", "<CMD>Neotree reveal left toggle dir=%:p:h:h<CR>"},
   },
   deactivate = function()
     vim.cmd([[Neotree close]])
@@ -70,6 +70,7 @@ return {
 config = function()
   local config = require("neo-tree")
   config.setup({
+      close_if_last_window = true,
       window = {
         position = 'current',
         mappings = {
