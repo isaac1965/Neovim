@@ -47,6 +47,7 @@ map("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Comment line", n
 map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Comment line", noremap = true })
 map('n', '<leader>bf', ':bd<CR>', {noremap = true, silent = true})
 
+-- ThePrimagean
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
 
